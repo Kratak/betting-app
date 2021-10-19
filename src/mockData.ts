@@ -5,6 +5,11 @@ export interface RaceDataProps {
     participants: Array<number>;
 }
 
+export interface ParticipantDateProps {
+    id: number;
+    body: string;
+}
+
 export const raceData: Array<RaceDataProps> = [
     {
         id: 1,
@@ -56,9 +61,49 @@ export const raceData: Array<RaceDataProps> = [
     },
 ];
 
-export const singleRaceData: RaceDataProps = {
-    id: 1,
-    name: 'Beat the Clock to Yellow Rock',
-    active: true,
-    participants: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-};
+export const participantData: Array<ParticipantDateProps> = [
+    {
+        id: 1,
+        body: 'The Boulder Mobile',
+    },
+    {
+        id: 2,
+        body: 'The Buzzwagon',
+    },
+    {
+        id: 3,
+        body: 'The Creepy Coupe',
+    },
+    {
+        id: 4,
+        body: 'The Bulletproof Bomb',
+    },
+    {
+        id: 5,
+        body: 'The Compact Pussycat',
+    },
+    {
+        id: 6,
+        body: 'The Crimson Haybaler',
+    },
+    {
+        id: 7,
+        body: 'The Convert-A-Car',
+    },
+    {
+        id: 8,
+        body: 'The Arkansas Chuggabug',
+    },
+    {
+        id: 9,
+        body: 'The Turbo Terrific',
+    },
+    {
+        id: 10,
+        body: 'The Army Surplus Special',
+    },
+    {
+        id: 11,
+        body: 'The Mean Machine',
+    },
+];

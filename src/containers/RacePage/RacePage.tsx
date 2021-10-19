@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { raceData } from '../../mockData';
 import React from 'react';
+
+import { participantData, raceData } from '../../mockData';
 
 interface PacePageUrlParamsProps {
     id: string;
@@ -15,12 +16,20 @@ const RacePage = () => {
     if (typeof race === 'object') {
         return (
             <div>
-                <div>name: {race.name}</div>
+                <div>race name: {race.name}</div>
                 <div>status: {race.active ? 'active' : 'not active'}</div>
                 <div>
                     <div>participants</div>
                     {race.participants.map((item, index) => {
-                        return <div key={`${index}-${item}`}>{item}</div>;
+                        const participant = participantData.find((data) => data.id === Number(item));
+                        if (typeof participant === 'object') {
+                            return (
+                                <div key={`${index}-${item}`}>
+                                    <div>name: {participant.body}</div>
+                                </div>
+                            );
+                        }
+                        return <div key={`${index}-${item}`}>No data</div>;
                     })}
                 </div>
             </div>
