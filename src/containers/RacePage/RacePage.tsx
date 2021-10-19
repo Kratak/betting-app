@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom';
 import React from 'react';
 
-import { participantData, raceData } from '../../mockData';
+import { raceData } from '../../mockData';
+import ParticipantsTable from '../../components/ParticipantsTable/ParticipantsTable';
+import { Typography } from '@material-ui/core';
 
 interface PacePageUrlParamsProps {
     id: string;
@@ -16,22 +18,10 @@ const RacePage = () => {
     if (typeof race === 'object') {
         return (
             <div>
-                <div>race name: {race.name}</div>
-                <div>status: {race.active ? 'active' : 'not active'}</div>
-                <div>
-                    <div>participants</div>
-                    {race.participants.map((item, index) => {
-                        const participant = participantData.find((data) => data.id === Number(item));
-                        if (typeof participant === 'object') {
-                            return (
-                                <div key={`${index}-${item}`}>
-                                    <div>name: {participant.body}</div>
-                                </div>
-                            );
-                        }
-                        return <div key={`${index}-${item}`}>No data</div>;
-                    })}
-                </div>
+                <Typography variant={'body1'}>Race name: {race.name}</Typography>
+                <Typography variant={'body1'}>Status: {race.active ? 'active' : 'not active'}</Typography>
+
+                <ParticipantsTable rows={race.participants} />
             </div>
         );
     }

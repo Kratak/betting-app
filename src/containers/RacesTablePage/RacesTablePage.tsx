@@ -2,8 +2,10 @@ import { RacesTable } from '../../components/RacesTable';
 import { raceData, RaceDataProps } from '../../mockData';
 import { useEffect, useState } from 'react';
 import { Checkbox, Typography } from '@material-ui/core';
+import { useStyles } from './styles';
 
 const RacesTablePage = () => {
+    const classes = useStyles();
     const [rows, setRows] = useState<Array<RaceDataProps>>([]);
     const [filters, setFilter] = useState<{ areActive: boolean | null }>({ areActive: null });
 
@@ -21,8 +23,8 @@ const RacesTablePage = () => {
 
     return (
         <div>
-            <div>
-                <Typography variant={'body2'}>Status</Typography>
+            <div className={classes.header}>
+                <Typography variant={'body2'}>Is race active</Typography>
                 <Checkbox
                     value={!!filters.areActive}
                     onChange={() => {
