@@ -1,11 +1,18 @@
 import React from 'react';
 
-function App() {
+import { Table } from './components/Table';
+
+import { useStyles } from './styles';
+import { raceData } from './mockData';
+
+const App = () => {
+    const classes = useStyles();
+
     return (
-        <div className="App">
-            test
+        <div className={classes.root}>
+            <Table rows={raceData} />
         </div>
     );
-}
+};
 
 export default App;
