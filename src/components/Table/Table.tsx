@@ -9,6 +9,7 @@ import {
     TableHead,
     TableRow,
 } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 interface TableProps {
     rows: Array<RaceDataProps>;
@@ -29,6 +30,7 @@ const Table = (props: TableProps) => {
                         <TableCell align="right">Name</TableCell>
                         <TableCell align="right">Status</TableCell>
                         <TableCell align="right">Participant</TableCell>
+                        <TableCell />
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -42,6 +44,10 @@ const Table = (props: TableProps) => {
                                 {row.participants.map((item) => {
                                     return item;
                                 })}
+                            </TableCell>
+
+                            <TableCell align="right">
+                                <Link to={`/race/${row.id}`}>Go to race</Link>
                             </TableCell>
                         </TableRow>
                     ))}
