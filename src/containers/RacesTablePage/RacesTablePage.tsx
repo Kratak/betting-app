@@ -1,9 +1,9 @@
-import { Table } from '../../components/Table';
+import { RacesTable } from '../../components/RacesTable';
 import { raceData, RaceDataProps } from '../../mockData';
 import { useEffect, useState } from 'react';
 import { Checkbox, Typography } from '@material-ui/core';
 
-const RaceTablePage = () => {
+const RacesTablePage = () => {
     const [rows, setRows] = useState<Array<RaceDataProps>>([]);
     const [filters, setFilter] = useState<{ areActive: boolean | null }>({ areActive: null });
 
@@ -30,9 +30,9 @@ const RaceTablePage = () => {
                     }}
                 />
             </div>
-            <Table rows={rows} />
+            <RacesTable rows={rows} />
         </div>
     );
 };
 
-export default RaceTablePage;
+export default RacesTablePage;

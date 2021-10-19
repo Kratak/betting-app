@@ -15,7 +15,7 @@ interface TableProps {
     rows: Array<RaceDataProps>;
 }
 
-const Table = (props: TableProps) => {
+const RacesTable = (props: TableProps) => {
     return (
         <TableContainer component={Paper}>
             <BaseTable>
@@ -51,4 +51,4 @@ const Table = (props: TableProps) => {
     );
 };
 
-export default Table;
+export default RacesTable;

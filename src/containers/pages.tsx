@@ -1,11 +1,11 @@
 import { ReactNode } from 'react';
 import { NotFoundPage } from './NotFoundPage';
-import { RaceTablePage } from './RaceTablePage';
+import { RacesTablePage } from './RacesTablePage';
 import { RacePage } from './RacePage';
 
 const pages: Array<{ exact?: boolean; page: ReactNode; path: string }> = [
     {
-        page: <RaceTablePage />,
+        page: <RacesTablePage />,
         path: '/',
         exact: true,
     },
