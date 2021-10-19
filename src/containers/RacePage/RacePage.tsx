@@ -26,7 +26,7 @@ const RacePage = () => {
             </div>
         );
     }
-    return <div>single race view</div>;
+    return <div>Race not found</div>;
 };
 
 export default RacePage;

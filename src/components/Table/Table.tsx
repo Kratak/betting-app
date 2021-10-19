@@ -1,5 +1,5 @@
 import { RaceDataProps } from '../../mockData';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
     Paper,
     Table as BaseTable,
@@ -16,12 +16,6 @@ interface TableProps {
 }
 
 const Table = (props: TableProps) => {
-    const [rows, setRows] = useState<Array<RaceDataProps>>([]);
-
-    useEffect(() => {
-        setRows(props.rows);
-    }, []);
-
     return (
         <TableContainer component={Paper}>
             <BaseTable>
@@ -34,7 +28,7 @@ const Table = (props: TableProps) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
+                    {props.rows.map((row) => (
                         <TableRow key={row.id}>
                             <TableCell component="th" scope="row">
                                 {row.name}
